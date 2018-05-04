@@ -149,7 +149,7 @@ module Fluent
             #log.info "[GET w] start : #{wal[:start_lsn]}, end : #{wal[:end_lsn]}, time : #{wal[:send_time]}, data : #{wal[:data]}"
             last_status = sendFeedback(now, last_status, true)
 
-            @router.emit(@tag, Fluent::Engine.now, wal[:data])
+            @router.emit(@tag, Fluent::Engine.now, JSON.parse(wal[:data]))
 
           elsif (wal[:type] == 'k') # Keepalive data
             #log.info "[GET k] end : #{wal[:end_lsn]}, time : #{wal[:send_time]}, reply_required : #{wal[:reply_required]}"
