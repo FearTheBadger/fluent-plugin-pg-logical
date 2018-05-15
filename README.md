@@ -12,7 +12,7 @@ install with gem or fluent-gem command as:
 
 `````
 # for system installed fluentd
-$ gem install fluent-plugin-pg-logical
+$ fluent-gem install fluent-plugin-pg-logical
 `````
 
 ## Configuration
